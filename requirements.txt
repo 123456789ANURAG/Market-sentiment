@@ -1,0 +1,7 @@
+google-api-python-client  # To talk to YouTube
+pandas                    # To handle data frames
+transformers              # For the AI sentiment model
+torch                     # Backend for the AI model
+python-dotenv             # To hide your API keys
+regex                     # For cleaning text
+tqdm                      # Progress bars (optional but nice)

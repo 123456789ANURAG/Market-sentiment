@@ -1,0 +1,501 @@
+id,ticker,true_label,comment_text
+1,TSLA,bearish,Puts on TSLA printed today! 📉
+2,COIN,neutral,Volume is low on COIN today.
+3,NVDA,bullish,"Buying more NVDA at this price, it's a steal!"
+4,COIN,spam,Great video! msg me 📞 +44 7890 123
+5,AAPL,spam,Great video! msg me 📞 +44 7890 123
+6,COIN,bullish,My portfolio is 50% COIN and I sleep like a baby.
+7,AAPL,bullish,AAPL to the moon! 🚀🚀
+8,PLTR,tricky,"Yeah sure, because PLTR always goes up... right?"
+9,COIN,bullish,"The AI revolution is just starting, COIN is the leader."
+10,NVDA,bearish,This stock is overhyped garbage.
+11,AMD,bullish,"Buying more AMD at this price, it's a steal!"
+12,MSFT,bullish,"Buying more MSFT at this price, it's a steal!"
+13,NVDA,neutral,Does anyone know when the next earnings call is?
+14,AAPL,bullish,"Solid earnings, great guidance. Easy hold."
+15,AAPL,bearish,The valuation makes no sense. AAPL is overvalued.
+16,GOOGL,bullish,"Just bought 100 shares of GOOGL, holding for 5 years."
+17,COIN,bearish,The valuation makes no sense. COIN is overvalued.
+18,NVDA,bullish,"Ignore the FUD, NVDA is going to $1000."
+19,AMD,bearish,Revenue missed expectations. AMD is done.
+20,NVDA,bullish,"Just bought 100 shares of NVDA, holding for 5 years."
+21,GOOGL,bullish,My portfolio is 50% GOOGL and I sleep like a baby.
+22,GOOGL,bullish,"The AI revolution is just starting, GOOGL is the leader."
+23,AAPL,bullish,"Just bought 100 shares of AAPL, holding for 5 years."
+24,AAPL,bearish,"Selling my AAPL position, the chart looks weak."
+25,TSLA,bearish,"Selling my TSLA position, the chart looks weak."
+26,MSFT,tricky,I love how this stock drops every time good news comes out.
+27,AAPL,bearish,The valuation makes no sense. AAPL is overvalued.
+28,NVDA,bullish,"Buying more NVDA at this price, it's a steal!"
+29,PLTR,bearish,Dead cat bounce. PLTR is going to crash.
+30,NVDA,neutral,What do you think is a good entry price for NVDA?
+31,AAPL,bearish,"Selling my AAPL position, the chart looks weak."
+32,NVDA,bullish,"Buying more NVDA at this price, it's a steal!"
+33,AAPL,bearish,AAPL is a bubble waiting to burst.
+34,MSFT,bearish,Revenue missed expectations. MSFT is done.
+35,TSLA,bullish,"Solid earnings, great guidance. Easy hold."
+36,MSFT,bearish,"Selling my MSFT position, the chart looks weak."
+37,PLTR,bearish,"Selling my PLTR position, the chart looks weak."
+38,COIN,bullish,"Fundamentals for COIN are incredible, revenue up 180% year over year."
+39,AAPL,bullish,"Buying more AAPL at this price, it's a steal!"
+40,PLTR,spam,Are you tired of losing? Join my telegram.
+41,MSFT,bearish,MSFT is a bubble waiting to burst.
+42,AAPL,bullish,"Fundamentals for AAPL are incredible, revenue up 116% year over year."
+43,AMD,bullish,AMD to the moon! 🚀🚀
+44,PLTR,neutral,Can you cover PLTR in the next video?
+45,COIN,spam,Are you tired of losing? Join my telegram.
+46,MSFT,bearish,Dead cat bounce. MSFT is going to crash.
+47,MSFT,spam,Lose weight fast with this one trick.
+48,TSLA,tricky,"Yeah sure, because TSLA always goes up... right?"
+49,NVDA,spam,Invest in Bitcoin now! 💰
+50,COIN,bullish,"Solid earnings, great guidance. Easy hold."
+51,NVDA,tricky,"Great job losing my money, thanks for the tip."
+52,TSLA,bearish,Puts on TSLA printed today! 📉
+53,NVDA,neutral,"Holding cash for now, waiting for a dip."
+54,AMD,neutral,First view!
+55,TSLA,bearish,Shorting TSLA with everything I have.
+56,MSFT,bearish,MSFT is a bubble waiting to burst.
+57,PLTR,tricky,"Buy high sell low, that's my strategy for PLTR!"
+58,AAPL,bullish,"Buying more AAPL at this price, it's a steal!"
+59,TSLA,bullish,"The AI revolution is just starting, TSLA is the leader."
+60,AAPL,bearish,This stock is overhyped garbage.
+61,GOOGL,spam,Check my bio for the best trading bot.
+62,PLTR,spam,CLICK HERE FOR FREE MONEY
+63,NVDA,bearish,This stock is overhyped garbage.
+64,PLTR,bullish,Everyone doubting PLTR is going to regret it.
+65,PLTR,bullish,Long term bullish on PLTR.
+66,TSLA,bearish,TSLA is a bubble waiting to burst.
+67,AAPL,bearish,"Selling my AAPL position, the chart looks weak."
+68,GOOGL,bearish,Shorting GOOGL with everything I have.
+69,GOOGL,bearish,Dead cat bounce. GOOGL is going to crash.
+70,PLTR,neutral,"Holding cash for now, waiting for a dip."
+71,AMD,neutral,Volume is low on AMD today.
+72,AAPL,tricky,"Wow, another 'groundbreaking' announcement. Yawn."
+73,COIN,bearish,"Management is selling shares, get out of COIN now!"
+74,MSFT,bullish,"Buying more MSFT at this price, it's a steal!"
+75,NVDA,bearish,Revenue missed expectations. NVDA is done.
+76,NVDA,bearish,The valuation makes no sense. NVDA is overvalued.
+77,GOOGL,tricky,"Wow, another 'groundbreaking' announcement. Yawn."
+78,AMD,tricky,"Wow, another 'groundbreaking' announcement. Yawn."
+79,TSLA,spam,Check my bio for the best trading bot.
+80,AMD,bullish,"Ignore the FUD, AMD is going to $1000."
+81,MSFT,neutral,First view!
+82,MSFT,tricky,"Wow, another 'groundbreaking' announcement. Yawn."
+83,PLTR,bullish,"Just bought 100 shares of PLTR, holding for 5 years."
+84,COIN,bullish,"Buying more COIN at this price, it's a steal!"
+85,NVDA,tricky,"Buy high sell low, that's my strategy for NVDA!"
+86,GOOGL,bullish,"The AI revolution is just starting, GOOGL is the leader."
+87,GOOGL,neutral,Volume is low on GOOGL today.
+88,NVDA,neutral,"Holding cash for now, waiting for a dip."
+89,TSLA,bearish,Revenue missed expectations. TSLA is done.
+90,TSLA,bullish,Everyone doubting TSLA is going to regret it.
+91,PLTR,bullish,Everyone doubting PLTR is going to regret it.
+92,AMD,bullish,Long term bullish on AMD.
+93,GOOGL,spam,Check my bio for the best trading bot.
+94,PLTR,bearish,"Selling my PLTR position, the chart looks weak."
+95,PLTR,neutral,Does anyone know when the next earnings call is?
+96,TSLA,neutral,Just analyzing the chart for TSLA.
+97,COIN,bearish,Puts on COIN printed today! 📉
+98,GOOGL,bearish,"I lost so much money on GOOGL, never again."
+99,PLTR,bullish,"The AI revolution is just starting, PLTR is the leader."
+100,PLTR,neutral,First view!
+101,GOOGL,bullish,Everyone doubting GOOGL is going to regret it.
+102,MSFT,bearish,The valuation makes no sense. MSFT is overvalued.
+103,AAPL,bearish,Puts on AAPL printed today! 📉
+104,MSFT,bearish,Revenue missed expectations. MSFT is done.
+105,COIN,bullish,"Buying more COIN at this price, it's a steal!"
+106,AMD,bearish,"Selling my AMD position, the chart looks weak."
+107,MSFT,tricky,"Great job losing my money, thanks for the tip."
+108,GOOGL,spam,Whatsapp me at +1 234 567 for crypto signals!
+109,PLTR,bearish,"I lost so much money on PLTR, never again."
+110,COIN,bullish,My portfolio is 50% COIN and I sleep like a baby.
+111,PLTR,bearish,"Selling my PLTR position, the chart looks weak."
+112,MSFT,bullish,"Solid earnings, great guidance. Easy hold."
+113,TSLA,spam,Are you tired of losing? Join my telegram.
+114,MSFT,bullish,Long term bullish on MSFT.
+115,MSFT,bearish,The valuation makes no sense. MSFT is overvalued.
+116,PLTR,bearish,"Management is selling shares, get out of PLTR now!"
+117,NVDA,bullish,My portfolio is 50% NVDA and I sleep like a baby.
+118,AAPL,bullish,Long term bullish on AAPL.
+119,GOOGL,spam,Whatsapp me at +1 234 567 for crypto signals!
+120,AMD,bullish,Long term bullish on AMD.
+121,COIN,bearish,"I lost so much money on COIN, never again."
+122,PLTR,bullish,"Buying more PLTR at this price, it's a steal!"
+123,AMD,bullish,"The AI revolution is just starting, AMD is the leader."
+124,AAPL,bullish,AAPL to the moon! 🚀🚀
+125,NVDA,spam,Great video! msg me 📞 +44 7890 123
+126,TSLA,neutral,Market is choppy today.
+127,AMD,neutral,Watching AMD closely this week.
+128,TSLA,bullish,"Just bought 100 shares of TSLA, holding for 5 years."
+129,MSFT,bearish,"Selling my MSFT position, the chart looks weak."
+130,AAPL,neutral,"Holding cash for now, waiting for a dip."
+131,COIN,neutral,First view!
+132,NVDA,bearish,"I lost so much money on NVDA, never again."
+133,NVDA,bullish,"Ignore the FUD, NVDA is going to $1000."
+134,PLTR,bearish,"I lost so much money on PLTR, never again."
+135,AAPL,bearish,Revenue missed expectations. AAPL is done.
+136,AAPL,bearish,"I lost so much money on AAPL, never again."
+137,AAPL,bullish,AAPL to the moon! 🚀🚀
+138,COIN,tricky,"Great job losing my money, thanks for the tip."
+139,AMD,bullish,Long term bullish on AMD.
+140,COIN,bullish,COIN to the moon! 🚀🚀
+141,NVDA,bearish,NVDA is a bubble waiting to burst.
+142,COIN,spam,Lose weight fast with this one trick.
+143,COIN,bullish,"Ignore the FUD, COIN is going to $1000."
+144,GOOGL,neutral,Volume is low on GOOGL today.
+145,COIN,neutral,Market is choppy today.
+146,AAPL,bearish,Shorting AAPL with everything I have.
+147,MSFT,bearish,"I lost so much money on MSFT, never again."
+148,PLTR,neutral,What do you think is a good entry price for PLTR?
+149,AAPL,bullish,My portfolio is 50% AAPL and I sleep like a baby.
+150,GOOGL,bearish,"Selling my GOOGL position, the chart looks weak."
+151,AMD,spam,"Promoting my new music channel, check it out."
+152,COIN,neutral,What do you think is a good entry price for COIN?
+153,AMD,neutral,Market is choppy today.
+154,AAPL,bullish,"Solid earnings, great guidance. Easy hold."
+155,AAPL,bullish,Long term bullish on AAPL.
+156,GOOGL,bullish,Everyone doubting GOOGL is going to regret it.
+157,TSLA,bearish,This stock is overhyped garbage.
+158,COIN,tricky,"Wow, another 'groundbreaking' announcement. Yawn."
+159,AMD,bullish,"The AI revolution is just starting, AMD is the leader."
+160,AMD,bullish,Long term bullish on AMD.
+161,AMD,bearish,"I lost so much money on AMD, never again."
+162,NVDA,neutral,Volume is low on NVDA today.
+163,MSFT,bearish,MSFT is a bubble waiting to burst.
+164,MSFT,spam,Great video! msg me 📞 +44 7890 123
+165,MSFT,tricky,"Buy high sell low, that's my strategy for MSFT!"
+166,NVDA,bearish,Dead cat bounce. NVDA is going to crash.
+167,TSLA,bullish,"Buying more TSLA at this price, it's a steal!"
+168,AAPL,bearish,"I lost so much money on AAPL, never again."
+169,AMD,bullish,"Just bought 100 shares of AMD, holding for 5 years."
+170,NVDA,bullish,Long term bullish on NVDA.
+171,TSLA,bullish,"Ignore the FUD, TSLA is going to $1000."
+172,GOOGL,neutral,"Interesting video, thanks for the analysis."
+173,PLTR,bullish,Long term bullish on PLTR.
+174,COIN,bullish,"Just bought 100 shares of COIN, holding for 5 years."
+175,TSLA,spam,"Promoting my new music channel, check it out."
+176,PLTR,bearish,Revenue missed expectations. PLTR is done.
+177,AAPL,tricky,"Buy high sell low, that's my strategy for AAPL!"
+178,NVDA,bearish,The valuation makes no sense. NVDA is overvalued.
+179,NVDA,bullish,Everyone doubting NVDA is going to regret it.
+180,AAPL,bullish,"Just bought 100 shares of AAPL, holding for 5 years."
+181,AMD,bearish,AMD is a bubble waiting to burst.
+182,COIN,spam,Check my bio for the best trading bot.
+183,GOOGL,bearish,Puts on GOOGL printed today! 📉
+184,MSFT,spam,"Ignore the video, read my profile."
+185,MSFT,bullish,"Fundamentals for MSFT are incredible, revenue up 173% year over year."
+186,TSLA,bearish,Puts on TSLA printed today! 📉
+187,NVDA,neutral,Watching NVDA closely this week.
+188,MSFT,bullish,"The AI revolution is just starting, MSFT is the leader."
+189,AMD,bullish,"Buying more AMD at this price, it's a steal!"
+190,AAPL,bearish,Puts on AAPL printed today! 📉
+191,AAPL,bearish,"Management is selling shares, get out of AAPL now!"
+192,MSFT,tricky,"Great job losing my money, thanks for the tip."
+193,GOOGL,neutral,Does anyone know when the next earnings call is?
+194,PLTR,bullish,PLTR to the moon! 🚀🚀
+195,PLTR,bullish,My portfolio is 50% PLTR and I sleep like a baby.
+196,NVDA,bearish,"Management is selling shares, get out of NVDA now!"
+197,MSFT,bullish,Everyone doubting MSFT is going to regret it.
+198,NVDA,bearish,Revenue missed expectations. NVDA is done.
+199,NVDA,bearish,"Management is selling shares, get out of NVDA now!"
+200,TSLA,bullish,Long term bullish on TSLA.
+201,TSLA,bullish,"Solid earnings, great guidance. Easy hold."
+202,MSFT,bullish,"Ignore the FUD, MSFT is going to $1000."
+203,TSLA,bullish,Everyone doubting TSLA is going to regret it.
+204,AAPL,spam,Whatsapp me at +1 234 567 for crypto signals!
+205,MSFT,bullish,Everyone doubting MSFT is going to regret it.
+206,GOOGL,tricky,"Great job losing my money, thanks for the tip."
+207,AAPL,bearish,"Selling my AAPL position, the chart looks weak."
+208,TSLA,bullish,"Solid earnings, great guidance. Easy hold."
+209,AAPL,neutral,"Interesting video, thanks for the analysis."
+210,MSFT,bearish,"I lost so much money on MSFT, never again."
+211,COIN,bullish,"Solid earnings, great guidance. Easy hold."
+212,NVDA,neutral,Does anyone know when the next earnings call is?
+213,PLTR,bearish,The valuation makes no sense. PLTR is overvalued.
+214,AAPL,bearish,Dead cat bounce. AAPL is going to crash.
+215,TSLA,bullish,"Just bought 100 shares of TSLA, holding for 5 years."
+216,COIN,tricky,"Buy high sell low, that's my strategy for COIN!"
+217,GOOGL,tricky,I love how this stock drops every time good news comes out.
+218,GOOGL,bullish,Long term bullish on GOOGL.
+219,PLTR,bullish,"Ignore the FUD, PLTR is going to $1000."
+220,GOOGL,neutral,Just analyzing the chart for GOOGL.
+221,TSLA,bullish,TSLA to the moon! 🚀🚀
+222,AMD,neutral,First view!
+223,AMD,bullish,Long term bullish on AMD.
+224,TSLA,spam,Whatsapp me at +1 234 567 for crypto signals!
+225,AAPL,bearish,Revenue missed expectations. AAPL is done.
+226,TSLA,bullish,"Buying more TSLA at this price, it's a steal!"
+227,PLTR,tricky,"Great job losing my money, thanks for the tip."
+228,MSFT,neutral,Watching MSFT closely this week.
+229,COIN,spam,Check my bio for the best trading bot.
+230,PLTR,bullish,Everyone doubting PLTR is going to regret it.
+231,TSLA,bullish,"Just bought 100 shares of TSLA, holding for 5 years."
+232,AAPL,tricky,"Yeah sure, because AAPL always goes up... right?"
+233,PLTR,bearish,"I lost so much money on PLTR, never again."
+234,GOOGL,bullish,My portfolio is 50% GOOGL and I sleep like a baby.
+235,AMD,bullish,"The AI revolution is just starting, AMD is the leader."
+236,COIN,bullish,"Solid earnings, great guidance. Easy hold."
+237,PLTR,bearish,Dead cat bounce. PLTR is going to crash.
+238,GOOGL,bullish,"The AI revolution is just starting, GOOGL is the leader."
+239,COIN,spam,CLICK HERE FOR FREE MONEY
+240,NVDA,bearish,Dead cat bounce. NVDA is going to crash.
+241,AMD,bearish,"Selling my AMD position, the chart looks weak."
+242,PLTR,bullish,"Buying more PLTR at this price, it's a steal!"
+243,PLTR,bullish,PLTR to the moon! 🚀🚀
+244,NVDA,neutral,Volume is low on NVDA today.
+245,PLTR,bullish,Long term bullish on PLTR.
+246,MSFT,neutral,Volume is low on MSFT today.
+247,GOOGL,bearish,The valuation makes no sense. GOOGL is overvalued.
+248,AAPL,bearish,"Management is selling shares, get out of AAPL now!"
+249,AAPL,neutral,Can you cover AAPL in the next video?
+250,MSFT,spam,Check my bio for the best trading bot.
+251,MSFT,bearish,This stock is overhyped garbage.
+252,NVDA,bullish,Everyone doubting NVDA is going to regret it.
+253,PLTR,bullish,"Just bought 100 shares of PLTR, holding for 5 years."
+254,AMD,bullish,"Buying more AMD at this price, it's a steal!"
+255,TSLA,spam,Lose weight fast with this one trick.
+256,AMD,neutral,Does anyone know when the next earnings call is?
+257,COIN,bullish,COIN to the moon! 🚀🚀
+258,PLTR,spam,Invest in Bitcoin now! 💰
+259,AMD,bullish,AMD to the moon! 🚀🚀
+260,AMD,bullish,Everyone doubting AMD is going to regret it.
+261,NVDA,bearish,"Selling my NVDA position, the chart looks weak."
+262,COIN,spam,Are you tired of losing? Join my telegram.
+263,GOOGL,bullish,"The AI revolution is just starting, GOOGL is the leader."
+264,MSFT,bearish,"Management is selling shares, get out of MSFT now!"
+265,GOOGL,spam,Great video! msg me 📞 +44 7890 123
+266,COIN,bullish,My portfolio is 50% COIN and I sleep like a baby.
+267,MSFT,bullish,"Fundamentals for MSFT are incredible, revenue up 92% year over year."
+268,NVDA,bearish,"Selling my NVDA position, the chart looks weak."
+269,GOOGL,spam,Great video! msg me 📞 +44 7890 123
+270,AMD,bearish,AMD is a bubble waiting to burst.
+271,AAPL,spam,Start earning $5000 weekly with Mr. James.
+272,AAPL,bearish,Shorting AAPL with everything I have.
+273,NVDA,bearish,Shorting NVDA with everything I have.
+274,GOOGL,bearish,"I lost so much money on GOOGL, never again."
+275,COIN,bearish,COIN is a bubble waiting to burst.
+276,PLTR,spam,Check my bio for the best trading bot.
+277,NVDA,neutral,First view!
+278,COIN,bullish,"Solid earnings, great guidance. Easy hold."
+279,COIN,spam,CLICK HERE FOR FREE MONEY
+280,AMD,neutral,"Holding cash for now, waiting for a dip."
+281,PLTR,neutral,Just analyzing the chart for PLTR.
+282,MSFT,bearish,"Selling my MSFT position, the chart looks weak."
+283,MSFT,bearish,Shorting MSFT with everything I have.
+284,PLTR,bearish,Puts on PLTR printed today! 📉
+285,AMD,bearish,"Selling my AMD position, the chart looks weak."
+286,AAPL,bullish,Everyone doubting AAPL is going to regret it.
+287,AAPL,bullish,Long term bullish on AAPL.
+288,PLTR,bullish,"Just bought 100 shares of PLTR, holding for 5 years."
+289,TSLA,bearish,Revenue missed expectations. TSLA is done.
+290,MSFT,bearish,Puts on MSFT printed today! 📉
+291,COIN,bullish,Everyone doubting COIN is going to regret it.
+292,AAPL,spam,Invest in Bitcoin now! 💰
+293,GOOGL,bearish,Dead cat bounce. GOOGL is going to crash.
+294,MSFT,bearish,This stock is overhyped garbage.
+295,TSLA,bearish,Puts on TSLA printed today! 📉
+296,PLTR,bearish,"Selling my PLTR position, the chart looks weak."
+297,GOOGL,bullish,My portfolio is 50% GOOGL and I sleep like a baby.
+298,PLTR,bullish,My portfolio is 50% PLTR and I sleep like a baby.
+299,PLTR,bullish,"Ignore the FUD, PLTR is going to $1000."
+300,TSLA,tricky,I love how this stock drops every time good news comes out.
+301,MSFT,spam,Start earning $5000 weekly with Mr. James.
+302,NVDA,bullish,"Fundamentals for NVDA are incredible, revenue up 97% year over year."
+303,PLTR,bearish,Shorting PLTR with everything I have.
+304,NVDA,tricky,"Great job losing my money, thanks for the tip."
+305,PLTR,bearish,"Management is selling shares, get out of PLTR now!"
+306,AMD,bullish,AMD to the moon! 🚀🚀
+307,NVDA,bearish,NVDA is a bubble waiting to burst.
+308,NVDA,bullish,"Fundamentals for NVDA are incredible, revenue up 16% year over year."
+309,AMD,bearish,Shorting AMD with everything I have.
+310,TSLA,bearish,Dead cat bounce. TSLA is going to crash.
+311,TSLA,bullish,Everyone doubting TSLA is going to regret it.
+312,AAPL,bullish,Long term bullish on AAPL.
+313,COIN,bullish,"Buying more COIN at this price, it's a steal!"
+314,MSFT,bearish,"I lost so much money on MSFT, never again."
+315,MSFT,bullish,My portfolio is 50% MSFT and I sleep like a baby.
+316,PLTR,bullish,My portfolio is 50% PLTR and I sleep like a baby.
+317,COIN,bullish,"The AI revolution is just starting, COIN is the leader."
+318,MSFT,bullish,"Just bought 100 shares of MSFT, holding for 5 years."
+319,TSLA,bearish,Revenue missed expectations. TSLA is done.
+320,PLTR,spam,"Promoting my new music channel, check it out."
+321,AMD,tricky,"Great job losing my money, thanks for the tip."
+322,COIN,bullish,My portfolio is 50% COIN and I sleep like a baby.
+323,AMD,neutral,First view!
+324,MSFT,bullish,"Buying more MSFT at this price, it's a steal!"
+325,TSLA,spam,Check my bio for the best trading bot.
+326,PLTR,bearish,The valuation makes no sense. PLTR is overvalued.
+327,AMD,bearish,"Selling my AMD position, the chart looks weak."
+328,COIN,bullish,"Ignore the FUD, COIN is going to $1000."
+329,NVDA,bullish,"Ignore the FUD, NVDA is going to $1000."
+330,COIN,bullish,Long term bullish on COIN.
+331,NVDA,bearish,Shorting NVDA with everything I have.
+332,AAPL,bearish,"I lost so much money on AAPL, never again."
+333,MSFT,bullish,My portfolio is 50% MSFT and I sleep like a baby.
+334,MSFT,neutral,"Interesting video, thanks for the analysis."
+335,AAPL,bearish,The valuation makes no sense. AAPL is overvalued.
+336,MSFT,bearish,"I lost so much money on MSFT, never again."
+337,GOOGL,bullish,Long term bullish on GOOGL.
+338,NVDA,bullish,"Solid earnings, great guidance. Easy hold."
+339,GOOGL,spam,Lose weight fast with this one trick.
+340,GOOGL,bullish,"Fundamentals for GOOGL are incredible, revenue up 147% year over year."
+341,MSFT,bearish,The valuation makes no sense. MSFT is overvalued.
+342,TSLA,bearish,TSLA is a bubble waiting to burst.
+343,MSFT,bullish,"Ignore the FUD, MSFT is going to $1000."
+344,NVDA,bullish,"Just bought 100 shares of NVDA, holding for 5 years."
+345,PLTR,bearish,Puts on PLTR printed today! 📉
+346,NVDA,bullish,My portfolio is 50% NVDA and I sleep like a baby.
+347,AMD,bullish,"The AI revolution is just starting, AMD is the leader."
+348,COIN,bearish,"Selling my COIN position, the chart looks weak."
+349,AAPL,neutral,Can you cover AAPL in the next video?
+350,COIN,bearish,"Selling my COIN position, the chart looks weak."
+351,AAPL,tricky,"Wow, another 'groundbreaking' announcement. Yawn."
+352,AAPL,bullish,"Buying more AAPL at this price, it's a steal!"
+353,NVDA,bullish,"Just bought 100 shares of NVDA, holding for 5 years."
+354,AAPL,bullish,"Solid earnings, great guidance. Easy hold."
+355,PLTR,neutral,Watching PLTR closely this week.
+356,AAPL,bearish,"I lost so much money on AAPL, never again."
+357,AMD,bearish,Puts on AMD printed today! 📉
+358,COIN,bullish,"Ignore the FUD, COIN is going to $1000."
+359,TSLA,neutral,Watching TSLA closely this week.
+360,MSFT,bearish,"Selling my MSFT position, the chart looks weak."
+361,TSLA,bearish,The valuation makes no sense. TSLA is overvalued.
+362,AMD,bearish,This stock is overhyped garbage.
+363,COIN,bullish,"Just bought 100 shares of COIN, holding for 5 years."
+364,AMD,bearish,Revenue missed expectations. AMD is done.
+365,PLTR,tricky,"Buy high sell low, that's my strategy for PLTR!"
+366,TSLA,bearish,"Selling my TSLA position, the chart looks weak."
+367,AAPL,bearish,The valuation makes no sense. AAPL is overvalued.
+368,COIN,bearish,Dead cat bounce. COIN is going to crash.
+369,AMD,spam,Check my bio for the best trading bot.
+370,COIN,neutral,Does anyone know when the next earnings call is?
+371,TSLA,neutral,First view!
+372,MSFT,bullish,"Buying more MSFT at this price, it's a steal!"
+373,COIN,bullish,"Just bought 100 shares of COIN, holding for 5 years."
+374,PLTR,bearish,"Selling my PLTR position, the chart looks weak."
+375,COIN,neutral,Just analyzing the chart for COIN.
+376,NVDA,bearish,The valuation makes no sense. NVDA is overvalued.
+377,AMD,bullish,Everyone doubting AMD is going to regret it.
+378,PLTR,neutral,"Interesting video, thanks for the analysis."
+379,TSLA,neutral,What do you think is a good entry price for TSLA?
+380,AAPL,bullish,My portfolio is 50% AAPL and I sleep like a baby.
+381,AMD,bearish,Revenue missed expectations. AMD is done.
+382,MSFT,bullish,"Ignore the FUD, MSFT is going to $1000."
+383,AMD,bullish,Everyone doubting AMD is going to regret it.
+384,NVDA,bearish,Puts on NVDA printed today! 📉
+385,NVDA,bearish,Dead cat bounce. NVDA is going to crash.
+386,TSLA,neutral,Volume is low on TSLA today.
+387,GOOGL,bearish,Shorting GOOGL with everything I have.
+388,PLTR,tricky,"Buy high sell low, that's my strategy for PLTR!"
+389,GOOGL,tricky,"Wow, another 'groundbreaking' announcement. Yawn."
+390,COIN,bullish,"Solid earnings, great guidance. Easy hold."
+391,MSFT,tricky,I love how this stock drops every time good news comes out.
+392,GOOGL,bullish,"Ignore the FUD, GOOGL is going to $1000."
+393,COIN,bearish,Puts on COIN printed today! 📉
+394,COIN,bullish,"Just bought 100 shares of COIN, holding for 5 years."
+395,PLTR,bullish,"Just bought 100 shares of PLTR, holding for 5 years."
+396,COIN,neutral,"Holding cash for now, waiting for a dip."
+397,PLTR,bearish,"I lost so much money on PLTR, never again."
+398,TSLA,bullish,Long term bullish on TSLA.
+399,GOOGL,bearish,The valuation makes no sense. GOOGL is overvalued.
+400,TSLA,bearish,"Management is selling shares, get out of TSLA now!"
+401,AAPL,spam,"Promoting my new music channel, check it out."
+402,AMD,bullish,"Buying more AMD at this price, it's a steal!"
+403,COIN,neutral,"Holding cash for now, waiting for a dip."
+404,COIN,tricky,"Great job losing my money, thanks for the tip."
+405,GOOGL,bullish,GOOGL to the moon! 🚀🚀
+406,GOOGL,bullish,Long term bullish on GOOGL.
+407,AAPL,spam,Check my bio for the best trading bot.
+408,COIN,bearish,COIN is a bubble waiting to burst.
+409,MSFT,bearish,Shorting MSFT with everything I have.
+410,MSFT,spam,Start earning $5000 weekly with Mr. James.
+411,AMD,bearish,"Selling my AMD position, the chart looks weak."
+412,MSFT,bearish,Revenue missed expectations. MSFT is done.
+413,GOOGL,bearish,Shorting GOOGL with everything I have.
+414,MSFT,bearish,"I lost so much money on MSFT, never again."
+415,PLTR,spam,Are you tired of losing? Join my telegram.
+416,AMD,bullish,"Ignore the FUD, AMD is going to $1000."
+417,GOOGL,bullish,"Fundamentals for GOOGL are incredible, revenue up 182% year over year."
+418,PLTR,bullish,PLTR to the moon! 🚀🚀
+419,NVDA,bullish,"Fundamentals for NVDA are incredible, revenue up 104% year over year."
+420,COIN,spam,Great video! msg me 📞 +44 7890 123
+421,COIN,bullish,"Ignore the FUD, COIN is going to $1000."
+422,MSFT,neutral,"Holding cash for now, waiting for a dip."
+423,NVDA,spam,"Ignore the video, read my profile."
+424,PLTR,neutral,What do you think is a good entry price for PLTR?
+425,GOOGL,bearish,Shorting GOOGL with everything I have.
+426,TSLA,bullish,"Solid earnings, great guidance. Easy hold."
+427,MSFT,bullish,"The AI revolution is just starting, MSFT is the leader."
+428,COIN,bearish,This stock is overhyped garbage.
+429,AAPL,bullish,"The AI revolution is just starting, AAPL is the leader."
+430,TSLA,bullish,"Just bought 100 shares of TSLA, holding for 5 years."
+431,PLTR,neutral,What do you think is a good entry price for PLTR?
+432,TSLA,neutral,"Interesting video, thanks for the analysis."
+433,GOOGL,bearish,GOOGL is a bubble waiting to burst.
+434,COIN,bearish,The valuation makes no sense. COIN is overvalued.
+435,COIN,bearish,"Selling my COIN position, the chart looks weak."
+436,AAPL,bearish,The valuation makes no sense. AAPL is overvalued.
+437,PLTR,bearish,PLTR is a bubble waiting to burst.
+438,COIN,bullish,Everyone doubting COIN is going to regret it.
+439,GOOGL,bullish,My portfolio is 50% GOOGL and I sleep like a baby.
+440,AAPL,bearish,AAPL is a bubble waiting to burst.
+441,COIN,bullish,COIN to the moon! 🚀🚀
+442,AMD,tricky,"Wow, another 'groundbreaking' announcement. Yawn."
+443,AMD,neutral,Volume is low on AMD today.
+444,GOOGL,spam,Great video! msg me 📞 +44 7890 123
+445,NVDA,bearish,Shorting NVDA with everything I have.
+446,NVDA,bullish,"Just bought 100 shares of NVDA, holding for 5 years."
+447,PLTR,bearish,Shorting PLTR with everything I have.
+448,AMD,spam,"Ignore the video, read my profile."
+449,MSFT,spam,Whatsapp me at +1 234 567 for crypto signals!
+450,PLTR,bullish,My portfolio is 50% PLTR and I sleep like a baby.
+451,AAPL,spam,"Ignore the video, read my profile."
+452,MSFT,spam,Whatsapp me at +1 234 567 for crypto signals!
+453,COIN,neutral,Can you cover COIN in the next video?
+454,GOOGL,bearish,"Selling my GOOGL position, the chart looks weak."
+455,AMD,neutral,Watching AMD closely this week.
+456,PLTR,spam,Check my bio for the best trading bot.
+457,COIN,bullish,"The AI revolution is just starting, COIN is the leader."
+458,AMD,neutral,Watching AMD closely this week.
+459,PLTR,bearish,"Selling my PLTR position, the chart looks weak."
+460,COIN,bearish,Shorting COIN with everything I have.
+461,TSLA,bearish,TSLA is a bubble waiting to burst.
+462,AMD,bullish,Long term bullish on AMD.
+463,PLTR,bullish,"Ignore the FUD, PLTR is going to $1000."
+464,AMD,neutral,First view!
+465,AMD,bullish,"Ignore the FUD, AMD is going to $1000."
+466,AMD,bearish,"Selling my AMD position, the chart looks weak."
+467,AMD,bullish,AMD to the moon! 🚀🚀
+468,TSLA,bullish,"Fundamentals for TSLA are incredible, revenue up 99% year over year."
+469,AAPL,bullish,Everyone doubting AAPL is going to regret it.
+470,PLTR,bearish,This stock is overhyped garbage.
+471,TSLA,bearish,"Selling my TSLA position, the chart looks weak."
+472,COIN,neutral,Watching COIN closely this week.
+473,NVDA,bullish,"The AI revolution is just starting, NVDA is the leader."
+474,TSLA,neutral,Watching TSLA closely this week.
+475,NVDA,neutral,Volume is low on NVDA today.
+476,AMD,bearish,"I lost so much money on AMD, never again."
+477,PLTR,bearish,Dead cat bounce. PLTR is going to crash.
+478,AMD,bearish,AMD is a bubble waiting to burst.
+479,PLTR,bearish,"Management is selling shares, get out of PLTR now!"
+480,GOOGL,bearish,"Selling my GOOGL position, the chart looks weak."
+481,TSLA,spam,Invest in Bitcoin now! 💰
+482,GOOGL,bullish,"Ignore the FUD, GOOGL is going to $1000."
+483,TSLA,bearish,"Management is selling shares, get out of TSLA now!"
+484,NVDA,neutral,Just analyzing the chart for NVDA.
+485,AAPL,neutral,First view!
+486,NVDA,bearish,The valuation makes no sense. NVDA is overvalued.
+487,COIN,bearish,"Selling my COIN position, the chart looks weak."
+488,TSLA,spam,CLICK HERE FOR FREE MONEY
+489,AMD,bearish,"I lost so much money on AMD, never again."
+490,MSFT,spam,Start earning $5000 weekly with Mr. James.
+491,AMD,bearish,Revenue missed expectations. AMD is done.
+492,TSLA,spam,Are you tired of losing? Join my telegram.
+493,COIN,neutral,Can you cover COIN in the next video?
+494,GOOGL,bearish,Shorting GOOGL with everything I have.
+495,GOOGL,neutral,"Interesting video, thanks for the analysis."
+496,GOOGL,bullish,GOOGL to the moon! 🚀🚀
+497,AAPL,bearish,"I lost so much money on AAPL, never again."
+498,MSFT,bearish,Revenue missed expectations. MSFT is done.
+499,COIN,bearish,Dead cat bounce. COIN is going to crash.
+500,PLTR,neutral,What do you think is a good entry price for PLTR?
