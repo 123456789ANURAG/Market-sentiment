@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MarketPulse — Stock Sentiment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+<style>
+  :root {
+    --bg:       #090c10;
+    --surface:  #0f1318;
+    --border:   #1e242d;
+    --muted:    #3a4352;
+    --text:     #e8edf5;
+    --sub:      #7a8799;
+    --buy:      #00e5a0;
+    --sell:     #ff4d6d;
+    --hold:     #f5c542;
+    --neutral:  #5a8cff;
+    --accent:   #5a8cff;
+    --font-head: 'Syne', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-mono);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* noise overlay */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0;
+  }
+
+  #root { position: relative; z-index: 1; }
+
+  /* ── Layout ── */
+  .shell {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* ── Header ── */
+  .hdr {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .logo {
+    font-family: var(--font-head);
+    font-size: clamp(26px, 5vw, 38px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .logo span { color: var(--accent); }
+  .tagline {
+    font-size: 11px;
+    color: var(--sub);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+  .hdr-badge {
+    font-size: 11px;
+    color: var(--sub);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 4px;
+  }
+
+  /* ── Search card ── */
+  .search-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .search-card::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(90,140,255,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .search-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sub);
+    margin-bottom: 12px;
+  }
+  .search-row {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  .ticker-input {
+    flex: 1;
+    min-width: 200px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 14px 20px;
+    outline: none;
+    transition: border-color 0.2s;
+    text-transform: uppercase;
+  }
+  .ticker-input::placeholder { color: var(--muted); font-weight: 400; letter-spacing: 0.04em; font-size: 16px; }
+  .ticker-input:focus { border-color: var(--accent); }
+
+  .analyze-btn {
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-family: var(--font-head);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    transition: opacity 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .analyze-btn:hover:not(:disabled) { opacity: 0.85; transform: translateY(-1px); }
+  .analyze-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .search-hint {
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .search-hint span { color: var(--sub); }
+
+  /* ── Loading ── */
+  .loading-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 48px 32px;
+    text-align: center;
+  }
+  .spinner {
+    width: 36px; height: 36px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-steps { margin-top: 16px; }
+  .loading-step {
+    font-size: 12px;
+    color: var(--sub);
+    letter-spacing: 0.06em;
+    padding: 4px 0;
+    transition: color 0.3s;
+  }
+  .loading-step.active { color: var(--accent); }
+  .loading-step.done { color: var(--buy); }
+
+  /* ── Error ── */
+  .error-card {
+    background: rgba(255,77,109,0.06);
+    border: 1px solid rgba(255,77,109,0.25);
+    border-radius: 12px;
+    padding: 24px 28px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .error-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  .error-title { font-family: var(--font-head); font-weight: 700; color: var(--sell); margin-bottom: 4px; }
+  .error-msg { font-size: 13px; color: var(--sub); }
+
+  /* ── Results layout ── */
+  .results { animation: fadeUp 0.4s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+  .results-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .results-ticker {
+    font-family: var(--font-head);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .results-ticker span { color: var(--accent); }
+  .results-meta { font-size: 11px; color: var(--sub); letter-spacing: 0.06em; }
+
+  /* ── Signal hero ── */
+  .signal-hero {
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+  .signal-hero.buy  { background: rgba(0,229,160,0.07); border: 1px solid rgba(0,229,160,0.25); }
+  .signal-hero.sell { background: rgba(255,77,109,0.07); border: 1px solid rgba(255,77,109,0.25); }
+  .signal-hero.hold { background: rgba(245,197,66,0.07); border: 1px solid rgba(245,197,66,0.25); }
+
+  .signal-glow {
+    position: absolute; top: -40px; left: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  .signal-hero.buy  .signal-glow { background: var(--buy); }
+  .signal-hero.sell .signal-glow { background: var(--sell); }
+  .signal-hero.hold .signal-glow { background: var(--hold); }
+
+  .signal-badge {
+    font-family: var(--font-head);
+    font-size: clamp(40px, 8vw, 64px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .buy  .signal-badge { color: var(--buy); }
+  .sell .signal-badge { color: var(--sell); }
+  .hold .signal-badge { color: var(--hold); }
+
+  .signal-info { flex: 1; }
+  .signal-strength {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .buy  .signal-strength { color: var(--buy); }
+  .sell .signal-strength { color: var(--sell); }
+  .hold .signal-strength { color: var(--hold); }
+
+  .signal-desc {
+    font-size: 14px;
+    color: var(--sub);
+    line-height: 1.6;
+    max-width: 420px;
+  }
+
+  /* ── Stat grid ── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sub);
+    margin-bottom: 8px;
+  }
+  .stat-value {
+    font-family: var(--font-head);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .stat-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ── Sentiment bar ── */
+  .sentiment-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .sentiment-title {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sub);
+    margin-bottom: 16px;
+  }
+  .bar-track {
+    height: 10px;
+    border-radius: 99px;
+    background: var(--border);
+    display: flex;
+    overflow: hidden;
+    gap: 2px;
+    margin-bottom: 14px;
+  }
+  .bar-seg {
+    height: 100%;
+    border-radius: 99px;
+    transition: width 0.6s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .bar-seg.buy  { background: var(--buy); }
+  .bar-seg.sell { background: var(--sell); }
+  .bar-seg.hold { background: var(--neutral); }
+
+  .bar-legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: var(--sub);
+  }
+  .legend-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-dot.buy  { background: var(--buy); }
+  .legend-dot.sell { background: var(--sell); }
+  .legend-dot.hold { background: var(--neutral); }
+  .legend-pct { color: var(--text); font-weight: 500; margin-left: 2px; }
+
+  /* ── Sample comments ── */
+  .comments-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .comments-title {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sub);
+    margin-bottom: 16px;
+  }
+  .comment-item {
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    border-left: 3px solid transparent;
+  }
+  .comment-item.positive { background: rgba(0,229,160,0.04);  border-left-color: var(--buy); }
+  .comment-item.negative { background: rgba(255,77,109,0.04); border-left-color: var(--sell); }
+  .comment-item.neutral  { background: rgba(90,140,255,0.04); border-left-color: var(--neutral); }
+
+  .comment-pill {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 99px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .comment-item.positive .comment-pill { background: rgba(0,229,160,0.15); color: var(--buy); }
+  .comment-item.negative .comment-pill { background: rgba(255,77,109,0.15); color: var(--sell); }
+  .comment-item.neutral  .comment-pill { background: rgba(90,140,255,0.15); color: var(--neutral); }
+
+  .comment-text { font-size: 12px; color: var(--sub); line-height: 1.6; }
+  .comment-score { font-size: 10px; color: var(--muted); margin-top: 3px; }
+
+  /* ── Videos list ── */
+  .videos-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .videos-title {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sub);
+    margin-bottom: 16px;
+  }
+  .video-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--sub);
+  }
+  .video-item:last-child { border-bottom: none; }
+  .video-num {
+    font-size: 10px;
+    color: var(--muted);
+    width: 18px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+  .video-icon { color: var(--sell); font-size: 14px; flex-shrink: 0; }
+
+  /* ── New search btn ── */
+  .new-search-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--sub);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    padding: 10px 20px;
+    margin-top: 24px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .new-search-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+  .footer a { color: var(--sub); text-decoration: none; }
+  .footer a:hover { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .shell { padding: 28px 16px 60px; }
+    .signal-hero { padding: 24px; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+
+const API = "http://localhost:8000";
+
+const LOADING_STEPS = [
+  "Searching YouTube for recent videos...",
+  "Extracting comments from videos...",
+  "Running spam filter...",
+  "Analysing with FinBERT AI...",
+  "Building your report...",
+];
+
+const SIGNAL_DESCRIPTIONS = {
+  BUY:  "Social sentiment is overwhelmingly bullish. The crowd sees upside. Consider this as one signal among many before acting.",
+  SELL: "Negative sentiment dominates the conversation. The crowd is bearish. Combine with fundamentals before deciding.",
+  HOLD: "Sentiment is mixed or inconclusive. No strong directional signal from the crowd at this time.",
+};
+
+function App() {
+  const [ticker, setTicker]     = useState("");
+  const [loading, setLoading]   = useState(false);
+  const [step, setStep]         = useState(0);
+  const [data, setData]         = useState(null);
+  const [error, setError]       = useState(null);
+  const intervalRef             = useRef(null);
+  const inputRef                = useRef(null);
+
+  // Advance loading steps visually while waiting
+  useEffect(() => {
+    if (loading) {
+      setStep(0);
+      let s = 0;
+      intervalRef.current = setInterval(() => {
+        s++;
+        if (s < LOADING_STEPS.length - 1) setStep(s);
+        else clearInterval(intervalRef.current);
+      }, 2200);
+    } else {
+      clearInterval(intervalRef.current);
+    }
+    return () => clearInterval(intervalRef.current);
+  }, [loading]);
+
+  async function handleAnalyze() {
+    if (!ticker.trim()) return;
+    setLoading(true);
+    setError(null);
+    setData(null);
+    try {
+      const res = await fetch(`${API}/analyze`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ticker: ticker.trim(), max_videos: 3, max_comments_per_video: 15 }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.detail || "Something went wrong.");
+      setStep(LOADING_STEPS.length - 1);
+      await new Promise(r => setTimeout(r, 600));
+      setData(json);
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function handleKey(e) {
+    if (e.key === "Enter") handleAnalyze();
+  }
+
+  function reset() {
+    setData(null);
+    setError(null);
+    setTicker("");
+    setTimeout(() => inputRef.current?.focus(), 100);
+  }
+
+  const sigClass = data ? data.signal.toLowerCase() : "";
+
+  return (
+    <div className="shell">
+      {/* Header */}
+      <header className="hdr">
+        <div>
+          <div className="logo">Market<span>Pulse</span></div>
+          <div className="tagline">AI-powered stock sentiment · FinBERT + YouTube</div>
+        </div>
+        <div className="hdr-badge">v1.0 · Real-time</div>
+      </header>
+
+      {/* Search */}
+      {!data && (
+        <div className="search-card">
+          <div className="search-label">Enter a stock ticker to analyse</div>
+          <div className="search-row">
+            <input
+              ref={inputRef}
+              className="ticker-input"
+              placeholder="NVDA, TSLA, AAPL..."
+              value={ticker}
+              onChange={e => setTicker(e.target.value.toUpperCase())}
+              onKeyDown={handleKey}
+              disabled={loading}
+              maxLength={10}
+              autoFocus
+            />
+            <button
+              className="analyze-btn"
+              onClick={handleAnalyze}
+              disabled={loading || !ticker.trim()}
+            >
+              {loading ? "Analysing…" : "Run Analysis"}
+            </button>
+          </div>
+          <div className="search-hint">
+            Sources: <span>YouTube comments</span> → Spam filter → <span>FinBERT AI</span>
+          </div>
+        </div>
+      )}
+
+      {/* Loading */}
+      {loading && (
+        <div className="loading-wrap">
+          <div className="spinner"/>
+          <div style={{fontFamily:"var(--font-head)", fontWeight:700, fontSize:18, letterSpacing:"-0.5px"}}>
+            Analysing <span style={{color:"var(--accent)"}}>${ticker}</span>
+          </div>
+          <div className="loading-steps">
+            {LOADING_STEPS.map((s, i) => (
+              <div
+                key={i}
+                className={`loading-step ${i === step ? "active" : i < step ? "done" : ""}`}
+              >
+                {i < step ? "✓" : i === step ? "→" : "·"} {s}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Error */}
+      {error && !loading && (
+        <div className="error-card">
+          <div className="error-icon">⚠</div>
+          <div>
+            <div className="error-title">Analysis Failed</div>
+            <div className="error-msg">{error}</div>
+            <button className="new-search-btn" style={{marginTop:12}} onClick={reset}>Try Again</button>
+          </div>
+        </div>
+      )}
+
+      {/* Results */}
+      {data && !loading && (
+        <div className="results">
+          <div className="results-header">
+            <div className="results-ticker">
+              <span>${data.ticker}</span> — Sentiment Report
+            </div>
+            <div className="results-meta">
+              {data.videos_analyzed} videos · {data.total_raw} raw comments · {data.spam_removed} spam removed
+            </div>
+          </div>
+
+          {/* Signal Hero */}
+          <div className={`signal-hero ${sigClass}`}>
+            <div className="signal-glow"/>
+            <div className="signal-badge">{data.signal}</div>
+            <div className="signal-info">
+              <div className="signal-strength">{data.signal_strength} Signal</div>
+              <div className="signal-desc">{SIGNAL_DESCRIPTIONS[data.signal]}</div>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="stat-grid">
+            <div className="stat-card">
+              <div className="stat-label">Bullish Comments</div>
+              <div className="stat-value" style={{color:"var(--buy)"}}>{data.bullish}</div>
+              <div className="stat-sub">{(data.bull_ratio * 100).toFixed(1)}% of total</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-label">Bearish Comments</div>
+              <div className="stat-value" style={{color:"var(--sell)"}}>{data.bearish}</div>
+              <div className="stat-sub">{(data.bear_ratio * 100).toFixed(1)}% of total</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-label">Neutral Comments</div>
+              <div className="stat-value" style={{color:"var(--neutral)"}}>{data.neutral}</div>
+              <div className="stat-sub">{(data.neutral_ratio * 100).toFixed(1)}% of total</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-label">Total Analysed</div>
+              <div className="stat-value">{data.total_analyzed}</div>
+              <div className="stat-sub">{data.spam_removed} spam removed</div>
+            </div>
+          </div>
+
+          {/* Sentiment Bar */}
+          <div className="sentiment-wrap">
+            <div className="sentiment-title">Sentiment Breakdown</div>
+            <div className="bar-track">
+              <div className="bar-seg buy"  style={{width: `${data.bull_ratio * 100}%`}}/>
+              <div className="bar-seg sell" style={{width: `${data.bear_ratio * 100}%`}}/>
+              <div className="bar-seg hold" style={{width: `${data.neutral_ratio * 100}%`}}/>
+            </div>
+            <div className="bar-legend">
+              <div className="legend-item">
+                <div className="legend-dot buy"/>
+                Bullish <span className="legend-pct">{(data.bull_ratio*100).toFixed(1)}%</span>
+              </div>
+              <div className="legend-item">
+                <div className="legend-dot sell"/>
+                Bearish <span className="legend-pct">{(data.bear_ratio*100).toFixed(1)}%</span>
+              </div>
+              <div className="legend-item">
+                <div className="legend-dot hold"/>
+                Neutral <span className="legend-pct">{(data.neutral_ratio*100).toFixed(1)}%</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Comment Samples */}
+          {data.comment_samples.length > 0 && (
+            <div className="comments-wrap">
+              <div className="comments-title">Voice of the Crowd — Sample Comments</div>
+              {data.comment_samples.map((c, i) => (
+                <div key={i} className={`comment-item ${c.label}`}>
+                  <div className="comment-pill">{c.label}</div>
+                  <div>
+                    <div className="comment-text">{c.text}{c.text.length >= 120 ? "…" : ""}</div>
+                    <div className="comment-score">Confidence: {(c.score * 100).toFixed(1)}%</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Videos sourced */}
+          {data.video_titles.length > 0 && (
+            <div className="videos-wrap">
+              <div className="videos-title">Videos Sourced</div>
+              {data.video_titles.map((t, i) => (
+                <div key={i} className="video-item">
+                  <span className="video-num">{i + 1}.</span>
+                  <span className="video-icon">▶</span>
+                  <span>{t}</span>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <button className="new-search-btn" onClick={reset}>← New Analysis</button>
+        </div>
+      )}
+
+      {/* Footer */}
+      <footer className="footer">
+        <span>MarketPulse · FinBERT AI + YouTube Data API</span>
+        <span>⚠ Not financial advice. For informational use only.</span>
+      </footer>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
